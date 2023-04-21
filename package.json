@@ -1,0 +1,46 @@
+{
+    "name": "task-1",
+    "version": "1.0.0",
+    "description": "",
+    "private": "true",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vancomm/infosec-resource.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/vancomm/infosec-resource/issues"
+    },
+    "homepage": "https://github.com/vancomm/infosec-resource#readme",
+    "devDependencies": {
+        "eslint": "^8.38.0"
+    },
+    "eslintConfig": {
+        "env": {
+            "browser": true,
+            "es2021": true
+        },
+        "extends": "eslint:recommended",
+        "overrides": [],
+        "parserOptions": {
+            "ecmaVersion": "latest",
+            "sourceType": "module"
+        },
+        "rules": {
+            "indent": [
+                "error",
+                4
+            ],
+            "quotes": [
+                "error",
+                "double"
+            ],
+            "semi": [
+                "error",
+                "always"
+            ],
+            "no-unused-vars": "warn"
+        }
+    }
+}

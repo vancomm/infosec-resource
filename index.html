@@ -8,145 +8,37 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&amp;family=Source+Serif+Pro:wght@400;700&amp;display=swap"
         rel="stylesheet">
-    <title>⚖ legal online</title>
-    <style>
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-        }
-
-        html {
-            font-size: 18px;
-            font-family: var(--ff-sans);
-
-            --ff-serif: 'Source Serif Pro', serif;
-            --ff-sans: 'Source Sans Pro', sans-serif;
-        }
-
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        header {
-            padding-block: .5em;
-            display: flex;
-            justify-content: center;
-            background-color: #333;
-            font: 1.8rem var(--ff-serif);
-            color: white;
-            user-select: none;
-        }
-
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .contents {
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .contents a {
-            color: rgba(0, 0, 0, .7);
-            font-size: 1.1rem;
-        }
-
-        .contents>*::marker {
-            content: "> ";
-        }
-
-        :is(header, main)>* {
-            width: min(80%, 40rem);
-        }
-
-        article {
-            margin-block: 1em;
-        }
-
-        header :is(h1, h2, h3) {
-            margin: 0;
-        }
-
-        h1 {
-            font-size: 1.5rem;
-        }
-
-        h2 {
-            font-size: 1.2rem;
-        }
-
-        .description {
-            padding: 1em;
-            border: 1px solid rgba(0, 0, 0, .5);
-            border-radius: .3em;
-        }
-
-        /* .description-term {} */
-
-        footer {
-            padding-block: 1.5em;
-            display: grid;
-            place-content: center;
-            background-color: #ccc;
-            height: 2rem;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="script.js"></script>
+    <title>legality</title>
 </head>
 
 <body>
     <header>
-        <div class="header-content">
-            <h3>
-                ⚖ legal online
+        <div>
+            <h3 class="site-name">
+                <!-- ⚖ legal online -->
+                <span class="gray">legal</span>it<span class="gray">y</span>
             </h3>
+            <!-- — журнал про закон -->
         </div>
     </header>
     <main>
-        <script type="module">
-            const contentsHeader = document.createElement('h1')
-            contentsHeader.classList.add('contents-header')
-            contentsHeader.textContent = "Содержание"
+        <div class="title-wrapper">
+            <h1 class="article-title">Персональные данные и закон</h1>
 
-            const contentsWrapper = document.createElement('ul')
-            contentsWrapper.classList.add('contents')
+            <div class="article-details">
+                <span class="article-timestamp">4 апреля</span>,
+                <span class="article-author">Алексей Казаков</span> и
+                <span class="article-author">Иван Пешехонов</span>
+            </div>
+        </div>
 
-            const headings = [...document.querySelectorAll("main :is(h1, h2, h3)")]
+        <div class="table-of-contents">
+            <h1 class="table-of-contents-header">Содержание</h1>
+            <ul class="table-of-contents-items"></ul>
+        </div>
 
-            headings.map((heading, i) => {
-                const text = heading.textContent
-                const id = i.toString()
-                const level = Number(heading.tagName.slice(1)) - 1
-
-                const a = document.createElement('a')
-                a.textContent = text
-                a.id = id
-
-                heading.replaceChildren(a)
-                return [level, id, text]
-            }).forEach(([level, id, text]) => {
-                const linkWrapper = document.createElement('li')
-                linkWrapper.style.marginLeft = `${1.5 * level}em`
-                const link = document.createElement('a')
-
-                link.href = `#${id}`
-                link.textContent = text
-
-                linkWrapper.appendChild(link)
-                contentsWrapper.appendChild(linkWrapper)
-            })
-            const main = document.body.querySelector('main')
-            main.insertBefore(contentsWrapper, main.firstChild)
-            main.insertBefore(contentsHeader, main.firstChild)
-
-        </script>
         <article>
             <h1>Введение</h1>
 
@@ -313,7 +205,7 @@
             </p>
         </article>
     </main>
-    <footer>Алексей Казаков, Иван Пешехонов / 2023</footer>
+    <footer>legal-it-y / 2023</footer>
 </body>
 
 </html>
